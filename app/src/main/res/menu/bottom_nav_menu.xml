@@ -13,7 +13,7 @@
         android:icon="@android:drawable/ic_menu_search"
         android:title="360 Search" />
     <item
-        android:id="@+id/nav_query"
-        android:icon="@android:drawable/ic_menu_add"
-        android:title="New Query" />
+        android:id="@+id/nav_modules"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="All Modules" />
 </menu>

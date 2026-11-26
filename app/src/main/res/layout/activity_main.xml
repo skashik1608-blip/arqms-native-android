@@ -249,114 +249,78 @@
             </ScrollView>
         </LinearLayout>
 
-        <!-- TAB 4: QUICK FARMER QUERY ENTRY -->
-        <ScrollView
-            android:id="@+id/tabQuickQuery"
+        <!-- TAB 4: ALL PORTAL MODULES HUB & LIVE MODULE VIEW -->
+        <LinearLayout
+            android:id="@+id/tabModules"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="14dp"
+            android:orientation="vertical"
             android:visibility="gone">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
+                android:id="@+id/moduleSubHeader"
                 android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="10dp"
+                android:elevation="2dp"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnModuleBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Back"
+                    android:textSize="12sp"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#E2E8F0"
+                    android:textColor="@color/text_primary" />
+
+                <TextView
+                    android:id="@+id/tvModuleTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="Module"
+                    android:textColor="@color/arqms_green"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnModuleRefresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Refresh"
+                    android:textSize="12sp"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/arqms_green"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/pbModule"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="3dp"
-                app:cardBackgroundColor="@color/white">
+                android:layout_gravity="center"
+                android:layout_marginTop="14dp"
+                android:visibility="gone" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="12dp">
 
                 <LinearLayout
+                    android:id="@+id/modulesContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical" />
+            </ScrollView>
+        </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="New Farmer Query Entry"
-                        android:textColor="@color/arqms_green"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="12dp" />
-
-                    <EditText
-                        android:id="@+id/etQName"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:hint="Farmer Full Name *"
-                        android:background="@android:drawable/edit_text"
-                        android:layout_marginBottom="8dp" />
-
-                    <EditText
-                        android:id="@+id/etQMobile"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:hint="Mobile Number (10 digits)"
-                        android:inputType="phone"
-                        android:maxLength="10"
-                        android:background="@android:drawable/edit_text"
-                        android:layout_marginBottom="8dp" />
-
-                    <EditText
-                        android:id="@+id/etQAadhaar"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:hint="Aadhaar Number (12 digits)"
-                        android:inputType="number"
-                        android:maxLength="12"
-                        android:background="@android:drawable/edit_text"
-                        android:layout_marginBottom="8dp" />
-
-                    <Spinner
-                        android:id="@+id/spQScheme"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginBottom="8dp" />
-
-                    <Spinner
-                        android:id="@+id/spQGp"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginBottom="8dp" />
-
-                    <EditText
-                        android:id="@+id/etQVillage"
-                        android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:hint="Village / Mouza"
-                        android:background="@android:drawable/edit_text"
-                        android:layout_marginBottom="8dp" />
-
-                    <EditText
-                        android:id="@+id/etQIssue"
-                        android:layout_width="match_parent"
-                        android:layout_height="76dp"
-                        android:hint="Query / Issue Details *"
-                        android:gravity="top"
-                        android:background="@android:drawable/edit_text"
-                        android:layout_marginBottom="8dp" />
-
-                    <EditText
-                        android:id="@+id/etQRemarks"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:hint="Remarks (Optional)"
-                        android:gravity="top"
-                        android:background="@android:drawable/edit_text"
-                        android:layout_marginBottom="14dp" />
-
-                    <Button
-                        android:id="@+id/btnSaveQuery"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:text="Save Farmer Query Live"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:backgroundTint="@color/arqms_green"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </ScrollView>
     </FrameLayout>
 
     <!-- Native Material Bottom Navigation Bar -->
