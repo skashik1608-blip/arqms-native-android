@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/arqms_green">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="ARQMS Logo"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARQMS Portal — Ausgram-I"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agri-Refund &amp; Query Management System"
+            android:textColor="#BBF7D0"
+            android:textSize="13sp"
+            android:layout_marginBottom="22dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvLoginStepTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Officer Sign-In (2FA Secured)"
+                    android:textColor="@color/arqms_green"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="14dp" />
+
+                <LinearLayout
+                    android:id="@+id/layoutStep1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/etUserId"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Official User ID / Mobile No."
+                        android:inputType="text"
+                        android:background="@android:drawable/edit_text"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Security Password"
+                        android:inputType="textPassword"
+                        android:background="@android:drawable/edit_text"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <EditText
+                        android:id="@+id/etDeviceName"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Phone Name (e.g. Ashik Phone)"
+                        android:inputType="text"
+                        android:background="@android:drawable/edit_text"
+                        android:padding="12dp"
+                        android:layout_marginBottom="14dp" />
+
+                    <Button
+                        android:id="@+id/btnSendOtp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Proceed to 2FA OTP"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/arqms_green"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutStep2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvOtpHint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="A 6-digit OTP has been sent to your registered email."
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="12dp" />
+
+                    <EditText
+                        android:id="@+id/etOtp"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter 6-Digit OTP"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:gravity="center"
+                        android:letterSpacing="0.3"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@android:drawable/edit_text"
+                        android:layout_marginBottom="14dp" />
+
+                    <Button
+                        android:id="@+id/btnVerifyOtp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Verify OTP &amp; Open App"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/arqms_green"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="8dp" />
+
+                    <Button
+                        android:id="@+id/btnBackStep1"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="Back to Login"
+                        android:textAllCaps="false"
+                        android:backgroundTint="#E2E8F0"
+                        android:textColor="@color/text_primary" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pbLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvLoginError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#B91C1C"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

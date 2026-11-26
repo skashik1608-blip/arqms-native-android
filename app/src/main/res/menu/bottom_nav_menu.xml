@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/nav_refunds"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Refunds" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="360 Search" />
+    <item
+        android:id="@+id/nav_query"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="New Query" />
+</menu>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="13dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvCardName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="#1 Farmer Name"
+                android:textColor="@color/text_primary"
+                android:textSize="15.5sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCardStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pending"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="3dp"
+                android:background="#FEF3C7"
+                android:textColor="#B45309" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvCardMeta1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PM-KISAN | GP | Village"
+            android:textColor="@color/text_muted"
+            android:textSize="12.5sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvCardMeta2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amt: Rs 6000 | Bank | A/c"
+            android:textColor="#0F172A"
+            android:textSize="12.5sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvCardMeta3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aadhaar | UTR | Memo"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"
+            android:layout_marginTop="3dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btnCardCall"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="Call"
+                android:textSize="11sp"
+                android:textAllCaps="false"
+                android:padding="0dp"
+                android:backgroundTint="#0284C7"
+                android:textColor="@color/white"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnCardUtr"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="UTR"
+                android:textSize="11sp"
+                android:textAllCaps="false"
+                android:padding="0dp"
+                android:backgroundTint="@color/arqms_green"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="3dp" />
+
+            <Button
+                android:id="@+id/btnCardUpload"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1.2"
+                android:text="Upload Doc"
+                android:textSize="11sp"
+                android:textAllCaps="false"
+                android:padding="0dp"
+                android:backgroundTint="#D97706"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="3dp" />
+
+            <Button
+                android:id="@+id/btnCardDrive"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:text="Drive"
+                android:textSize="11sp"
+                android:textAllCaps="false"
+                android:padding="0dp"
+                android:backgroundTint="#475569"
+                android:textColor="@color/white"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

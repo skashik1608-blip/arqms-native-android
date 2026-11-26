@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_surface">
+
+    <!-- Native Top App Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/arqms_green"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="14dp"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTopTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ARQMS Ausgram-I"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTopUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Live Native Mobile App"
+                android:textColor="#BBF7D0"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLogoutTop"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Logout"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:backgroundTint="#DC2626"
+            android:textColor="@color/white"
+            android:paddingHorizontal="12dp" />
+    </LinearLayout>
+
+    <!-- Tab Containers -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- TAB 1: DASHBOARD -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:id="@+id/dashContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!-- TAB 2: REFUNDS NATIVE CARD LIST -->
+        <LinearLayout
+            android:id="@+id/tabRefunds"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:id="@+id/etRefundSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:hint="Search Name, Aadhaar, Mobile, SL#..."
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:background="@android:drawable/edit_text"
+                        android:paddingHorizontal="10dp" />
+
+                    <Button
+                        android:id="@+id/btnRefundSearchGo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="6dp"
+                        android:text="Go"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/arqms_green"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnFilterAll"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:text="All"
+                        android:textSize="12sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/arqms_green"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:id="@+id/btnFilterPending"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:text="Pending"
+                        android:textSize="12sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="#E2E8F0"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginHorizontal="4dp" />
+
+                    <Button
+                        android:id="@+id/btnFilterCompleted"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:text="Completed"
+                        android:textSize="12sp"
+                        android:textAllCaps="false"
+                        android:backgroundTint="#E2E8F0"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvRefundCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loading records..."
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefunds"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRefunds"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:clipToPadding="false" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </LinearLayout>
+
+        <!-- TAB 3: 360 FARMER SEARCH -->
+        <LinearLayout
+            android:id="@+id/tabSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:elevation="2dp"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etGlobalSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:hint="Aadhaar (12 digits), Mobile, Reg No, Name"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:background="@android:drawable/edit_text"
+                    android:paddingHorizontal="10dp" />
+
+                <Button
+                    android:id="@+id/btnGlobalSearchGo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="6dp"
+                    android:text="Search"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/arqms_green"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/pbSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/searchResultsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- TAB 4: QUICK FARMER QUERY ENTRY -->
+        <ScrollView
+            android:id="@+id/tabQuickQuery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Farmer Query Entry"
+                        android:textColor="@color/arqms_green"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <EditText
+                        android:id="@+id/etQName"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:hint="Farmer Full Name *"
+                        android:background="@android:drawable/edit_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etQMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:hint="Mobile Number (10 digits)"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:background="@android:drawable/edit_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etQAadhaar"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:hint="Aadhaar Number (12 digits)"
+                        android:inputType="number"
+                        android:maxLength="12"
+                        android:background="@android:drawable/edit_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <Spinner
+                        android:id="@+id/spQScheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <Spinner
+                        android:id="@+id/spQGp"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etQVillage"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:hint="Village / Mouza"
+                        android:background="@android:drawable/edit_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etQIssue"
+                        android:layout_width="match_parent"
+                        android:layout_height="76dp"
+                        android:hint="Query / Issue Details *"
+                        android:gravity="top"
+                        android:background="@android:drawable/edit_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etQRemarks"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:hint="Remarks (Optional)"
+                        android:gravity="top"
+                        android:background="@android:drawable/edit_text"
+                        android:layout_marginBottom="14dp" />
+
+                    <Button
+                        android:id="@+id/btnSaveQuery"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="Save Farmer Query Live"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/arqms_green"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- Native Material Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@color/arqms_green"
+        app:itemTextColor="@color/arqms_green"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

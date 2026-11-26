@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="arqms_green">#004D28</color>
+    <color name="arqms_green_dark">#00351B</color>
+    <color name="arqms_green_light">#DCFCE7</color>
+    <color name="arqms_gold">#F59E0B</color>
+    <color name="bg_surface">#F1F5F9</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_muted">#475569</color>
+    <color name="white">#FFFFFF</color>
+</resources>
